@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
             message: message.content,
             user: message.user.username
             head :ok
-        end
+        
       else
         redirect_to chatrooms_path
       end
@@ -18,3 +18,5 @@ class MessagesController < ApplicationController
     def message_params
         params.require(:message).permit(:content, :chatroom_id)
     end
+
+end
